@@ -6,7 +6,7 @@ import modelo.Contactos;
 public interface ContactoDAO {
 
     
-    //Operaciones CRUD de Persona
+    //Operaciones CRUD de Contacto
     List <Contactos> getAllContacto();
     Contactos getContactoByNIF(String NIF);
     boolean addContacto(Contactos c);

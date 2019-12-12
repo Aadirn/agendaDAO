@@ -1,11 +1,12 @@
-
 package modelo;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.ImageIcon;
 
-public class Contactos implements Serializable{
+public class Contactos implements Serializable {
+
     private String nif;
     private String nombre;
     private String apellido1;
@@ -13,8 +14,9 @@ public class Contactos implements Serializable{
     private long telefono;
     private Date nacimiento;
     private String tipo;
+    private ImageIcon perfil;
 
-    public Contactos(String nif, String nombre, String apellido1, String apellido2, long telefono, Date nacimiento, String tipo) {
+    public Contactos(String nif, String nombre, String apellido1, String apellido2, long telefono, Date nacimiento, String tipo, ImageIcon perfil) {
         this.nif = nif;
         this.nombre = nombre;
         this.apellido1 = apellido1;
@@ -22,14 +24,7 @@ public class Contactos implements Serializable{
         this.telefono = telefono;
         this.nacimiento = nacimiento;
         this.tipo = tipo;
-    }
-    
-    public String formatDate(){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return sdf.format(this.nacimiento);
-    }
-
-    public Contactos() {
+        this.perfil = perfil;
     }
 
     public String getNif() {
@@ -88,10 +83,17 @@ public class Contactos implements Serializable{
         this.tipo = tipo;
     }
 
+    public ImageIcon getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(ImageIcon perfil) {
+        this.perfil = perfil;
+    }
+
     @Override
     public String toString() {
-        return "Contactos{" + "nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", telefono=" + telefono + ", nacimiento=" + nacimiento + ", tipo=" + tipo + '}';
+        return "Contactos{" + "nif=" + nif + ", nombre=" + nombre + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", telefono=" + telefono + ", nacimiento=" + nacimiento + ", tipo=" + tipo + "'}'";
     }
-    
-    
+
 }
